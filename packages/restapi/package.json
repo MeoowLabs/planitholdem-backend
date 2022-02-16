@@ -1,0 +1,29 @@
+{
+  "name": "@meoowlabs/planitpokerholdem-rest-api",
+  "version": "0.0.1",
+  "description": "planitpokerholdem REST API",
+  "author": "Mr. Fluff <meoow.labs@gmail.com>",
+  "homepage": "https://github.com/MeoowLabs/planitpokerholdem-backend#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeoowLabs/planitpokerholdem-backend.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/MeoowLabs/planitpokerholdem-backend/issues"
+  },
+  "dependencies": {
+    "@nestjs/common": "^8.3.0",
+    "@nestjs/core": "^8.3.0",
+    "@nestjs/cqrs": "^8.0.2",
+    "@nestjs/platform-fastify": "^8.3.0",
+    "fastify": "3.27.0",
+    "fastify-helmet": "^7.0.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.5.4"
+  }
+}
