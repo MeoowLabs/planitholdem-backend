@@ -1,0 +1,19 @@
+{
+  "name": "common",
+  "version": "0.0.1",
+  "description": "> TODO: description",
+  "author": "Mr. Fluff <meoow.labs@gmail.com>",
+  "homepage": "https://github.com/MeoowLabs/planitpokerholdem-backend#readme",
+  "license": "ISC",
+  "main": "lib/common.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeoowLabs/planitpokerholdem-backend.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/MeoowLabs/planitpokerholdem-backend/issues"
+  }
+}
