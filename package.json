@@ -1,0 +1,23 @@
+{
+  "name": "root",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeoowLabs/planitpokerholdem-backend.git"
+  },
+  "description": "Agile estimation tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "planning",
+    "estimation",
+    "agile"
+  ],
+  "author": "Mr. Fluff <meoow.labs@gmai.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
