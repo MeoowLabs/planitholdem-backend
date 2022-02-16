@@ -1,0 +1,18 @@
+coverage:
+  status:
+    project:
+      default: off
+      common:
+        flags:
+          - common
+      restapi:
+        flags:
+          - restapi
+
+flags:
+  common:
+    paths:
+      - packages/common/
+  restapi:
+    paths:
+      - packages/restapi/
