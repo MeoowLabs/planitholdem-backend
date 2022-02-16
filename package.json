@@ -15,10 +15,22 @@
     "estimation",
     "agile"
   ],
-  "author": "Mr. Fluff <meoow.labs@gmai.com>",
+  "author": "Mr. Fluff <meoow.labs@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "16",
     "lerna": "^4.0.0",
     "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "@nestjs/common": "^8.3.0",
+    "@nestjs/core": "^8.3.0",
+    "@nestjs/cqrs": "^8.0.2",
+    "@nestjs/platform-fastify": "^8.3.0",
+    "fastify": "3.27.1",
+    "fastify-helmet": "^7.0.1",
+    "prettier": "^2.5.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.5.4"
   }
 }
