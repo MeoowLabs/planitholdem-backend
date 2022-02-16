@@ -12,7 +12,9 @@
     "build": "tsc --build tsconfig.packages.json",
     "build:clean": "npm run build -- --clean",
     "format": "prettier --write ./packages",
-    "lint": "eslint --ext ts --ignore-path .gitignore ."
+    "lint": "eslint --ext ts --ignore-path .gitignore .",
+    "packages:link": "node ./scripts/cretateSymlinks.mjs",
+    "test": "jest --config=config/jest/jest.config.js --selectProjects Unit Integration"
   },
   "keywords": [
     "planning",
