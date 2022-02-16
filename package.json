@@ -8,7 +8,9 @@
   "description": "Agile estimation tool",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "build:dev": "tsc --build tsconfig.packages.dev.json",
+    "build": "tsc --build tsconfig.packages.json",
+    "build:clean": "npm run build -- --clean"
   },
   "keywords": [
     "planning",
