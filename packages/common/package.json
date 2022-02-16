@@ -15,5 +15,9 @@
   },
   "bugs": {
     "url": "https://github.com/MeoowLabs/planitpokerholdem-backend/issues"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^8.0.0",
+    "@nestjs/cqrs": "^8.0.0"
   }
 }
