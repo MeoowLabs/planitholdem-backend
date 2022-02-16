@@ -10,7 +10,9 @@
   "scripts": {
     "build:dev": "tsc --build tsconfig.packages.dev.json",
     "build": "tsc --build tsconfig.packages.json",
-    "build:clean": "npm run build -- --clean"
+    "build:clean": "npm run build -- --clean",
+    "format": "prettier --write ./packages",
+    "lint": "eslint --ext ts --ignore-path .gitignore ."
   },
   "keywords": [
     "planning",
