@@ -2,6 +2,9 @@
   "files": [],
   "references": [
     {
+      "path": "./packages/common/tsconfig.dev.json"
+    },
+    {
       "path": "./packages/restapi/tsconfig.dev.json"
     }
   ]
