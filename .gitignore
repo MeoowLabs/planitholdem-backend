@@ -1,0 +1,17 @@
+# node_modules
+node_modules/
+
+# pnpm
+.pnpm-debug.log
+pnpm-lock.yaml
+
+# Jest coverage report
+coverage/
+
+# Typescript compiled files
+packages/*/lib/**
+
+# TypeScript cache
+*.tsbuildinfo
+
+/tmp
