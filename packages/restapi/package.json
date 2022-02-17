@@ -11,7 +11,8 @@
     "url": "git+https://github.com/MeoowLabs/planitholdem-backend.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "start": "node -r ts-node/register ./src/scripts/startServer.ts",
+    "start:prod": "node ./lib/scripts/startServer.js"
   },
   "bugs": {
     "url": "https://github.com/MeoowLabs/planitholdem-backend/issues"
