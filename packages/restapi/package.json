@@ -11,7 +11,8 @@
     "url": "git+https://github.com/MeoowLabs/planitholdem-backend.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "start": "node -r ts-node/register ./src/scripts/startServer.ts",
+    "start:prod": "node ./lib/scripts/startServer.js"
   },
   "bugs": {
     "url": "https://github.com/MeoowLabs/planitholdem-backend/issues"
@@ -21,8 +22,7 @@
     "@nestjs/core": "^8.3.0",
     "@nestjs/cqrs": "^8.0.2",
     "@nestjs/platform-fastify": "^8.3.0",
-    "fastify": "3.27.0",
-    "fastify-helmet": "^7.0.1",
+    "fastify": "3.27.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.5.4"
   }

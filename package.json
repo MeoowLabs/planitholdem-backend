@@ -64,7 +64,6 @@
     "dotenv": "^16.0.0",
     "envalid": "^7.2.2",
     "fastify": "3.27.1",
-    "fastify-helmet": "^7.0.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.5.4"
   },
