@@ -13,6 +13,8 @@
     "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
     "paths": {
+      "@meoowlabs/planitpokerholdem-core": ["./packages/core"],
+      "@meoowlabs/planitpokerholdem-rest-api": ["./packages/restapi"]
     },
     "resolveJsonModule": true,
     "rootDir": "packages",

@@ -12,7 +12,7 @@ coverage:
 flags:
   common:
     paths:
-      - packages/common/
+      - packages/core/
   restapi:
     paths:
       - packages/restapi/

@@ -25,12 +25,7 @@ function buildPackageTsProjects(package) {
  * @returns { !import("@jest/types/build/Config").GlobalConfig } Jest config
  */
 function buildIntegrationPackageJsProject(package) {
-  return getJestJsProjectConfig(
-    `${package}-Integration`,
-    ['/node_modules'],
-    package,
-    '.spec.js',
-  );
+  return getJestJsProjectConfig(`${package}-Integration`, ['/node_modules'], package, '.spec.js');
 }
 
 /**
@@ -39,12 +34,7 @@ function buildIntegrationPackageJsProject(package) {
  * @returns { !import("@jest/types/build/Config").GlobalConfig } Jest config
  */
 function buildIntegrationPackageTsProject(package) {
-  return getJestTsProjectConfig(
-    `${package}-Integration`,
-    ['/node_modules'],
-    package,
-    '.spec.ts',
-  );
+  return getJestTsProjectConfig(`${package}-Integration`, ['/node_modules'], package, '.spec.ts');
 }
 
 /**
@@ -53,12 +43,7 @@ function buildIntegrationPackageTsProject(package) {
  * @returns { !import("@jest/types/build/Config").GlobalConfig } Jest config
  */
 function buildUnitPackageJsProject(package) {
-  return getJestJsProjectConfig(
-    `${package}-Unit`,
-    ['/node_modules', '.int.spec.js'],
-    package,
-    '.spec.js',
-  );
+  return getJestJsProjectConfig(`${package}-Unit`, ['/node_modules', '.int.spec.js'], package, '.spec.js');
 }
 
 /**
@@ -67,12 +52,7 @@ function buildUnitPackageJsProject(package) {
  * @returns { !import("@jest/types/build/Config").GlobalConfig } Jest config
  */
 function buildUnitPackageTsProject(package) {
-  return getJestTsProjectConfig(
-    `${package}-Unit`,
-    ['/node_modules', '.int.spec.ts'],
-    package,
-    '.spec.ts',
-  );
+  return getJestTsProjectConfig(`${package}-Unit`, ['/node_modules', '.int.spec.ts'], package, '.spec.ts');
 }
 
 /**
@@ -225,7 +205,7 @@ function getJsTestMatch(submoduleName, testExtension) {
  * @returns { !Array<string> }
  */
 function getPackages() {
-  return ['common', 'restapi'];
+  return ['core', 'restapi'];
 }
 
 module.exports = {
