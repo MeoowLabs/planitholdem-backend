@@ -16,6 +16,8 @@ import { InsertOneManager } from './common/domain/service/InsertOneManager';
 import { Manager } from './common/domain/service/Manager';
 import { ManagerAsync } from './common/domain/service/ManagerAsync';
 import { UpdateManager } from './common/domain/service/UpdateManager';
+import { LoadDataAdapter } from './env/domain/adapter/LoadDataAdapter';
+import { LoadDataDotenvAdapter } from './env/integration/dotenv/adapter/LoadDataDotenvAdapter';
 
 export {
   Converter,
@@ -31,6 +33,8 @@ export {
   InsertAdapter,
   InsertOneCommandHandler,
   InsertOneManager,
+  LoadDataAdapter,
+  LoadDataDotenvAdapter,
   Manager,
   ManagerAsync,
   UpdateAdapter,
