@@ -2,15 +2,15 @@ coverage:
   status:
     project:
       default: off
-      common:
+      core:
         flags:
-          - common
+          - core
       restapi:
         flags:
           - restapi
 
 flags:
-  common:
+  core:
     paths:
       - packages/core/
   restapi:
