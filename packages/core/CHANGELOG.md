@@ -20,3 +20,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 ## [UNRELEASED]
+
+### Added
+
+- Added `Converter`.
+- Added `ConverterAsync`.
+- Added `DeleteAdapter`.
+- Added `DeleteCommandHandler`.
+- Added `DeleteManager`.
+- Added `FindAdapter`.
+- Added `FindManager`.
+- Added `FindOneManager`.
+- Added `FindOneQueryHandler`.
+- Added `FindQueryHandler`.
+- Added `InsertAdapter`.
+- Added `InsertOneCommandHandler`.
+- Added `InsertOneManager`.
+- Added `LoadDataAdapter`.
+- Added `LoadDataDotenvAdapter`.
+- Added `Manager`.
+- Added `ManagerAsync`.
+- Added `UpdateAdapter`.
+- Added `UpdateCommandHandler`.
+- Added `UpdateManager`.
