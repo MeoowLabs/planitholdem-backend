@@ -5,7 +5,7 @@
   "author": "Mr. Fluff <meoow.labs@gmail.com>",
   "homepage": "https://github.com/MeoowLabs/planitholdem-backend#readme",
   "license": "ISC",
-  "main": "lib/common.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MeoowLabs/planitholdem-backend.git"
