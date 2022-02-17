@@ -1,4 +1,4 @@
-import { DeleteAdapter } from './DeleteAdapter';
+import { DeleteAdapter } from '../adapter/DeleteAdapter';
 import { DeleteManager } from './DeleteManager';
 
 interface CommandTest {

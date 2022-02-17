@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 
-import { FindAdapter } from './FindAdapter';
+import { FindAdapter } from '../adapter/FindAdapter';
 import { ManagerAsync } from './ManagerAsync';
 
 @Injectable()

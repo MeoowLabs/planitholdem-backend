@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { IQuery, IQueryHandler } from '@nestjs/cqrs';
 
-import { Manager } from '../../service/Manager';
-import { ManagerAsync } from '../../service/ManagerAsync';
+import { Manager } from '../../domain/service/Manager';
+import { ManagerAsync } from '../../domain/service/ManagerAsync';
 
 @Injectable()
 export class FindOneQueryHandler<TQuery extends IQuery, TModel> implements IQueryHandler<TQuery, TModel | undefined> {

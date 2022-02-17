@@ -1,4 +1,4 @@
-import { UpdateAdapter } from './UpdateAdapter';
+import { UpdateAdapter } from '../adapter/UpdateAdapter';
 import { UpdateManager } from './UpdateManager';
 
 interface CommandTest {

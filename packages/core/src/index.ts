@@ -3,19 +3,19 @@ import { FindOneQueryHandler } from './common/application/handler/FindOneQueryHa
 import { FindQueryHandler } from './common/application/handler/FindQueryHandler';
 import { InsertOneCommandHandler } from './common/application/handler/InsertOneCommandHandler';
 import { UpdateCommandHandler } from './common/application/handler/UpdateCommandHandler';
-import { Converter } from './common/service/Converter';
-import { ConverterAsync } from './common/service/ConverterAsync';
-import { DeleteAdapter } from './common/service/DeleteAdapter';
-import { DeleteManager } from './common/service/DeleteManager';
-import { FindAdapter } from './common/service/FindAdapter';
-import { FindManager } from './common/service/FindManager';
-import { FindOneManager } from './common/service/FindOneManager';
-import { InsertAdapter } from './common/service/InsertAdapter';
-import { InsertOneManager } from './common/service/InsertOneManager';
-import { Manager } from './common/service/Manager';
-import { ManagerAsync } from './common/service/ManagerAsync';
-import { UpdateAdapter } from './common/service/UpdateAdapter';
-import { UpdateManager } from './common/service/UpdateManager';
+import { DeleteAdapter } from './common/domain/adapter/DeleteAdapter';
+import { FindAdapter } from './common/domain/adapter/FindAdapter';
+import { InsertAdapter } from './common/domain/adapter/InsertAdapter';
+import { UpdateAdapter } from './common/domain/adapter/UpdateAdapter';
+import { Converter } from './common/domain/converter/Converter';
+import { ConverterAsync } from './common/domain/converter/ConverterAsync';
+import { DeleteManager } from './common/domain/service/DeleteManager';
+import { FindManager } from './common/domain/service/FindManager';
+import { FindOneManager } from './common/domain/service/FindOneManager';
+import { InsertOneManager } from './common/domain/service/InsertOneManager';
+import { Manager } from './common/domain/service/Manager';
+import { ManagerAsync } from './common/domain/service/ManagerAsync';
+import { UpdateManager } from './common/domain/service/UpdateManager';
 
 export {
   Converter,

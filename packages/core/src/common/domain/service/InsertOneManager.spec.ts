@@ -1,4 +1,4 @@
-import { InsertAdapter } from './InsertAdapter';
+import { InsertAdapter } from '../adapter/InsertAdapter';
 import { InsertOneManager } from './InsertOneManager';
 
 interface ModelTest {

@@ -1,4 +1,4 @@
-import { FindAdapter } from './FindAdapter';
+import { FindAdapter } from '../adapter/FindAdapter';
 import { FindManager } from './FindManager';
 
 interface ModelTest {
