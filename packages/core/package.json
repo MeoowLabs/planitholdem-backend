@@ -16,6 +16,10 @@
   "bugs": {
     "url": "https://github.com/MeoowLabs/planitholdem-backend/issues"
   },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "envalid": "^7.0.0"
+  },
   "peerDependencies": {
     "@nestjs/common": "^8.0.0",
     "@nestjs/cqrs": "^8.0.0"
