@@ -1,4 +1,4 @@
-import { ManagerAsync } from '../../domain/service/ManagerAsync';
+import { ManagerAsync } from '../../service/ManagerAsync';
 import { UpdateCommandHandler } from './UpdateCommandHandler';
 
 interface ModelTest {
