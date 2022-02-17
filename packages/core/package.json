@@ -1,20 +1,20 @@
 {
-  "name": "@meoowlabs/planitpokerholdem-core",
+  "name": "@meoowlabs/planitholdem-core",
   "version": "0.0.1",
   "description": "> TODO: description",
   "author": "Mr. Fluff <meoow.labs@gmail.com>",
-  "homepage": "https://github.com/MeoowLabs/planitpokerholdem-backend#readme",
+  "homepage": "https://github.com/MeoowLabs/planitholdem-backend#readme",
   "license": "ISC",
   "main": "lib/common.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MeoowLabs/planitpokerholdem-backend.git"
+    "url": "git+https://github.com/MeoowLabs/planitholdem-backend.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/MeoowLabs/planitpokerholdem-backend/issues"
+    "url": "https://github.com/MeoowLabs/planitholdem-backend/issues"
   },
   "peerDependencies": {
     "@nestjs/common": "^8.0.0",

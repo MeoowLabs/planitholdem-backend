@@ -3,7 +3,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MeoowLabs/planitpokerholdem-backend.git"
+    "url": "git+https://github.com/MeoowLabs/planitholdem-backend.git"
   },
   "description": "Agile estimation tool",
   "main": "index.js",
