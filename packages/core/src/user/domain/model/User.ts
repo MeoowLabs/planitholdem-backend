@@ -5,5 +5,4 @@ export interface User extends BaseEntity {
   surname: string;
   email: string;
   passwordHash: string;
-  salt: string;
 }

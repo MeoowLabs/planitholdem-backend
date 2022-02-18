@@ -15,7 +15,4 @@ export class UserTypeOrm extends BaseEntityTypeOrm {
 
   @Column({ length: 2048, name: 'passwordHash', type: 'varchar' })
   public passwordHash!: string;
-
-  @Column({ length: 2048, name: 'salt', type: 'varchar' })
-  public salt!: string;
 }
