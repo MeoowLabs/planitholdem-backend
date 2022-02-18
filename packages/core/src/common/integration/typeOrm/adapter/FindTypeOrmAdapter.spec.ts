@@ -1,7 +1,7 @@
 import { FindConditions, QueryBuilder, Repository, SelectQueryBuilder } from 'typeorm';
 
 import { Converter } from '../../../domain/converter/Converter';
-import { QueryToFindQueryTypeOrmConverter } from '../service/QueryToFindQueryTypeOrmConverter';
+import { QueryToFindQueryTypeOrmConverter } from '../converter/QueryToFindQueryTypeOrmConverter';
 import { FindTypeOrmAdapter } from './FindTypeOrmAdapter';
 
 interface ModelTest {

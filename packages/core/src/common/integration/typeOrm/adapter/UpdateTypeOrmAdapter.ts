@@ -4,8 +4,8 @@ import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity
 
 import { UpdateAdapter } from '../../../domain/adapter/UpdateAdapter';
 import { Converter } from '../../../domain/converter/Converter';
-import { QueryToFindQueryTypeOrmConverter } from '../service/QueryToFindQueryTypeOrmConverter';
-import { VirtualQueryToFindQueryTypeOrmConverter } from '../service/VirtualQueryToFindQueryTypeOrmConverter';
+import { QueryToFindQueryTypeOrmConverter } from '../converter/QueryToFindQueryTypeOrmConverter';
+import { VirtualQueryToFindQueryTypeOrmConverter } from '../converter/VirtualQueryToFindQueryTypeOrmConverter';
 
 @Injectable()
 export class UpdateTypeOrmAdapter<TModelDb, TQuery> implements UpdateAdapter<TQuery> {

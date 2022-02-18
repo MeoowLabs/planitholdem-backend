@@ -2,7 +2,7 @@ import { FindConditions, QueryBuilder, Repository, UpdateQueryBuilder } from 'ty
 import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
 
 import { Converter } from '../../../domain/converter/Converter';
-import { QueryToFindQueryTypeOrmConverter } from '../service/QueryToFindQueryTypeOrmConverter';
+import { QueryToFindQueryTypeOrmConverter } from '../converter/QueryToFindQueryTypeOrmConverter';
 import { UpdateTypeOrmAdapter } from './UpdateTypeOrmAdapter';
 
 interface ModelTest {

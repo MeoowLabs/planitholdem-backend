@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { DeleteQueryBuilder, FindConditions, QueryBuilder, Repository } from 'typeorm';
 
 import { DeleteAdapter } from '../../../domain/adapter/DeleteAdapter';
-import { QueryToFindQueryTypeOrmConverter } from '../service/QueryToFindQueryTypeOrmConverter';
-import { VirtualQueryToFindQueryTypeOrmConverter } from '../service/VirtualQueryToFindQueryTypeOrmConverter';
+import { QueryToFindQueryTypeOrmConverter } from '../converter/QueryToFindQueryTypeOrmConverter';
+import { VirtualQueryToFindQueryTypeOrmConverter } from '../converter/VirtualQueryToFindQueryTypeOrmConverter';
 
 @Injectable()
 export class DeleteTypeOrmAdapter<TModelDb, TQuery> implements DeleteAdapter<TQuery> {

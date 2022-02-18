@@ -3,8 +3,8 @@ import { FindConditions, QueryBuilder, Repository, SelectQueryBuilder } from 'ty
 
 import { FindAdapter } from '../../../domain/adapter/FindAdapter';
 import { Converter } from '../../../domain/converter/Converter';
-import { QueryToFindQueryTypeOrmConverter } from '../service/QueryToFindQueryTypeOrmConverter';
-import { VirtualQueryToFindQueryTypeOrmConverter } from '../service/VirtualQueryToFindQueryTypeOrmConverter';
+import { QueryToFindQueryTypeOrmConverter } from '../converter/QueryToFindQueryTypeOrmConverter';
+import { VirtualQueryToFindQueryTypeOrmConverter } from '../converter/VirtualQueryToFindQueryTypeOrmConverter';
 
 @Injectable()
 export class FindTypeOrmAdapter<TModel, TModelDb, TQuery> implements FindAdapter<TModel, TQuery> {
