@@ -8,7 +8,6 @@ export class UserFixtures {
       id: 'id-example',
       name: 'name-example',
       passwordHash: 'password-hash-example',
-      salt: 'salt-example',
       surname: 'surname-example',
       updatedAt: new Date(),
     };
