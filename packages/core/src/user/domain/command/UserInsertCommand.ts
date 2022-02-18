@@ -5,7 +5,6 @@ export class UserInsertCommand implements ICommand {
     public readonly name: string,
     public readonly surname: string,
     public readonly email: string,
-    public readonly passwordHash: string,
-    public readonly salt: string,
+    public readonly password: string,
   ) {}
 }
