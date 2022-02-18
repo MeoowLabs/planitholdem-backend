@@ -22,7 +22,7 @@
     "test:js:ci": "npm run test:js -- --ci",
     "test:js:coverage": "npm run test:js -- --coverage",
     "test:js:ci:coverage": "npm run test:js -- --ci --coverage",
-    "test:master": "npm run test -- --changedSince=origin/master",
+    "test:main": "npm run test -- --changedSince=origin/main",
     "test:package:core": "jest --config=config/jest/jest.config.js --selectProjects core-Integration core-Unit",
     "test:package:core:js": "jest --config=config/jest/jest.js.config.js --selectProjects core-Integration core-Unit",
     "test:package:core:js:ci:coverage": "npm run test:package:core:js -- --ci --coverage",
@@ -61,11 +61,14 @@
     "@nestjs/core": "^8.3.0",
     "@nestjs/cqrs": "^8.0.2",
     "@nestjs/platform-fastify": "^8.3.0",
+    "@nestjs/typeorm": "^8.0.3",
     "dotenv": "^16.0.0",
     "envalid": "^7.2.2",
     "fastify": "3.27.1",
+    "pg": "^8.7.3",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.5.4"
+    "rxjs": "^7.5.4",
+    "typeorm": "^0.2.42"
   },
   "lint-staged": {
     "*.js": [
