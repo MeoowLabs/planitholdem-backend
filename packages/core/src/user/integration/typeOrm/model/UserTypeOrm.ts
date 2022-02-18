@@ -5,17 +5,17 @@ import { BaseEntityTypeOrm } from '../../../../common/integration/typeOrm/model/
 @Entity('User')
 export class UserTypeOrm extends BaseEntityTypeOrm {
   @Column({ length: 255, name: 'name', type: 'varchar' })
-  public readonly name!: string;
+  public name!: string;
 
   @Column({ length: 255, name: 'surname', type: 'varchar' })
-  public readonly surname!: string;
+  public surname!: string;
 
   @Column({ length: 255, name: 'email', type: 'varchar' })
-  public readonly email!: string;
+  public email!: string;
 
   @Column({ length: 2048, name: 'passwordHash', type: 'varchar' })
-  public readonly passwordHash!: string;
+  public passwordHash!: string;
 
   @Column({ length: 2048, name: 'salt', type: 'varchar' })
-  public readonly salt!: string;
+  public salt!: string;
 }
