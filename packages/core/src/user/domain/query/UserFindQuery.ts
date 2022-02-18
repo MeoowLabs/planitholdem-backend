@@ -1,5 +1,7 @@
-import { IQuery } from '@nestjs/cqrs';
+import { BaseEntityFindQuery } from '../../../common/domain/query/BaseEntityFindQuery';
 
-export class UserFindQuery implements IQuery {
-  constructor(public readonly id: string | undefined, public readonly email: string | undefined) {}
+export class UserFindQuery extends BaseEntityFindQuery {
+  constructor(id: string | undefined, public readonly email: string | undefined) {
+    super(id);
+  }
 }
