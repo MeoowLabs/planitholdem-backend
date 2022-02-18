@@ -12,7 +12,7 @@ export class BaseEntityInsertCommandToBaseEntityInsertQueryTypeOrmConverter<
   TOutput extends DeepPartial<BaseEntityTypeOrm>,
 > implements Converter<TInput, TOutput>
 {
-  public convert(): TOutput {
+  public convert(input: TInput): TOutput {
     const date: Date = new Date();
 
     const output: DeepPartial<BaseEntityTypeOrm> = {
