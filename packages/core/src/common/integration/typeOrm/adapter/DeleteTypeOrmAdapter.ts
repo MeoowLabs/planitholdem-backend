@@ -14,7 +14,7 @@ export class DeleteTypeOrmAdapter<TModelDb, TQuery> implements DeleteAdapter<TQu
 
   public async delete(query: TQuery): Promise<void> {
     const deleteQueryBuilder: DeleteQueryBuilder<TModelDb> = this.repository.createQueryBuilder().delete();
-    const findQueryTypeOrmOrQueryBuilder: FindConditions<TModelDb> | QueryBuilder<TModelDb> = (
+    const findQueryTypeOrmOrQueryBuilder: FindConditions<TModelDb> | QueryBuilder<TModelDb> = await (
       this.queryToQueryTypeOrmConverter as VirtualQueryToFindQueryTypeOrmConverter<TModelDb, TQuery>
     ).convert(query, deleteQueryBuilder);
 

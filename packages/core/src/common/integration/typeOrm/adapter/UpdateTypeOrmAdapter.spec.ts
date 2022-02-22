@@ -1,7 +1,7 @@
 import { FindConditions, QueryBuilder, Repository, UpdateQueryBuilder } from 'typeorm';
 import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
 
-import { Converter } from '../../../domain/converter/Converter';
+import { ConverterAsync } from '../../../domain/converter/ConverterAsync';
 import { QueryToFindQueryTypeOrmConverter } from '../converter/QueryToFindQueryTypeOrmConverter';
 import { UpdateTypeOrmAdapter } from './UpdateTypeOrmAdapter';
 
@@ -16,7 +16,9 @@ interface QueryTest {
 describe(UpdateTypeOrmAdapter.name, () => {
   let queryBuilderMock: jest.Mocked<UpdateQueryBuilder<ModelTest>>;
   let updateQueryToFindQueryTypeOrmConverterMock: jest.Mocked<QueryToFindQueryTypeOrmConverter<ModelTest, QueryTest>>;
-  let updateQueryToSetQueryTypeOrmConverterMock: jest.Mocked<Converter<QueryTest, QueryDeepPartialEntity<ModelTest>>>;
+  let updateQueryToSetQueryTypeOrmConverterMock: jest.Mocked<
+    ConverterAsync<QueryTest, QueryDeepPartialEntity<ModelTest>>
+  >;
   let repositoryMock: jest.Mocked<Repository<ModelTest>>;
 
   let updateTypeOrmAdapter: UpdateTypeOrmAdapter<ModelTest, QueryTest>;
@@ -68,9 +70,9 @@ describe(UpdateTypeOrmAdapter.name, () => {
         };
 
         (
-          updateQueryToFindQueryTypeOrmConverterMock.convert as jest.Mock<FindConditions<ModelTest>>
-        ).mockReturnValueOnce(findQueryTypeOrmFixture);
-        updateQueryToSetQueryTypeOrmConverterMock.convert.mockReturnValueOnce(setQueryTypeOrmFixture);
+          updateQueryToFindQueryTypeOrmConverterMock.convert as jest.Mock<Promise<FindConditions<ModelTest>>>
+        ).mockResolvedValueOnce(findQueryTypeOrmFixture);
+        updateQueryToSetQueryTypeOrmConverterMock.convert.mockResolvedValueOnce(setQueryTypeOrmFixture);
 
         await updateTypeOrmAdapter.update(queryFixture);
       });
@@ -108,10 +110,10 @@ describe(UpdateTypeOrmAdapter.name, () => {
           foo: 'sample-string-modified',
         };
 
-        (updateQueryToFindQueryTypeOrmConverterMock.convert as jest.Mock<QueryBuilder<ModelTest>>).mockReturnValueOnce(
-          queryBuilderMock,
-        );
-        updateQueryToSetQueryTypeOrmConverterMock.convert.mockReturnValueOnce(setQueryTypeOrmFixture);
+        (
+          updateQueryToFindQueryTypeOrmConverterMock.convert as jest.Mock<Promise<QueryBuilder<ModelTest>>>
+        ).mockResolvedValueOnce(queryBuilderMock);
+        updateQueryToSetQueryTypeOrmConverterMock.convert.mockResolvedValueOnce(setQueryTypeOrmFixture);
 
         await updateTypeOrmAdapter.update(queryFixture);
       });
