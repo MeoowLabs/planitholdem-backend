@@ -17,11 +17,15 @@
     "url": "https://github.com/MeoowLabs/planitholdem-backend/issues"
   },
   "dependencies": {
+    "@types/uuid": "^8.3.4",
     "dotenv": "^16.0.0",
     "envalid": "^7.0.0"
   },
   "peerDependencies": {
     "@nestjs/common": "^8.0.0",
-    "@nestjs/cqrs": "^8.0.0"
+    "@nestjs/cqrs": "^8.0.0",
+    "argon2": "^0.28.4",
+    "typeorm": "^0.2.42",
+    "uuid": "^8.3.2"
   }
 }
