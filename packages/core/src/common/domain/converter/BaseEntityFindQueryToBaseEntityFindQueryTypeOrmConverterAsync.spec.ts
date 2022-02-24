@@ -1,7 +1,7 @@
 import { FindConditions } from 'typeorm';
 
 import { BaseEntityFindQueryFixtures } from '../../fixtures/domain/query/BaseEntityFindQueryFixtures';
-import { BaseEntityFindQueryTypeOrmFixtures } from '../../fixtures/integration/typeOrm/BaseEntityFindQueryTypeOrmFixtures';
+import { BaseEntityFindQueryTypeOrmFixtures } from '../../fixtures/integration/typeOrm/query/BaseEntityFindQueryTypeOrmFixtures';
 import { BaseEntityTypeOrm } from '../../integration/typeOrm/model/BaseEntityTypeOrm';
 import { BaseEntityFindQuery } from '../query/BaseEntityFindQuery';
 import { BaseEntityFindQueryToBaseEntityFindQueryTypeOrmConverterAsync } from './BaseEntityFindQueryToBaseEntityFindQueryTypeOrmConverterAsync';
