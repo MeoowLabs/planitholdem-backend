@@ -6,7 +6,7 @@ import { ManagerAsync } from '../../domain/service/ManagerAsync';
 
 @Injectable()
 export class FindOneQueryHandler<TQuery extends IQuery, TModel> implements IQueryHandler<TQuery, TModel | undefined> {
-  constructor(
+  public constructor(
     private readonly findOneManager: Manager<TQuery, TModel | undefined> | ManagerAsync<TQuery, TModel | undefined>,
   ) {}
 

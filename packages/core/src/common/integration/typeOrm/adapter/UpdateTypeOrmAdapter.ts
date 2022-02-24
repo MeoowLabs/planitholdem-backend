@@ -9,7 +9,7 @@ import { VirtualQueryToFindQueryTypeOrmConverter } from '../converter/VirtualQue
 
 @Injectable()
 export class UpdateTypeOrmAdapter<TModelDb, TQuery> implements UpdateAdapter<TQuery> {
-  constructor(
+  public constructor(
     private readonly updateQueryToFindQueryTypeOrmConverter: QueryToFindQueryTypeOrmConverter<TModelDb, TQuery>,
     private readonly updateQueryToSetQueryTypeOrmConverter: ConverterAsync<TQuery, QueryDeepPartialEntity<TModelDb>>,
     private readonly repository: Repository<TModelDb>,

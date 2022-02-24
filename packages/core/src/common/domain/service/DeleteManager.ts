@@ -5,7 +5,7 @@ import { ManagerAsync } from './ManagerAsync';
 
 @Injectable()
 export class DeleteManager<TCommand> implements ManagerAsync<TCommand, void> {
-  constructor(private readonly deleteAdapter: DeleteAdapter<TCommand>) {}
+  public constructor(private readonly deleteAdapter: DeleteAdapter<TCommand>) {}
 
   public async manage(command: TCommand): Promise<void> {
     await this.deleteAdapter.delete(command);

@@ -6,7 +6,7 @@ import { ManagerAsync } from '../../domain/service/ManagerAsync';
 
 @Injectable()
 export class DeleteCommandHandler<TModel, TCommand extends ICommand> implements ICommandHandler<TCommand> {
-  constructor(private readonly deleteManager: Manager<TCommand, TModel> | ManagerAsync<TCommand, TModel>) {}
+  public constructor(private readonly deleteManager: Manager<TCommand, TModel> | ManagerAsync<TCommand, TModel>) {}
 
   public async execute(command: TCommand): Promise<TModel> {
     return this.deleteManager.manage(command);

@@ -8,7 +8,7 @@ import { VirtualQueryToFindQueryTypeOrmConverter } from '../converter/VirtualQue
 
 @Injectable()
 export class FindTypeOrmAdapter<TModel, TModelDb, TQuery> implements FindAdapter<TModel, TQuery> {
-  constructor(
+  public constructor(
     private readonly repository: Repository<TModelDb>,
     private readonly modelDbToModelConverter: ConverterAsync<TModelDb, TModel>,
     private readonly findQueryToFindQueryTypeOrmConverter: QueryToFindQueryTypeOrmConverter<TModelDb, TQuery>,

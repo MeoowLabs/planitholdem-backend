@@ -8,7 +8,7 @@ class BaseEntityTypeOrmToBaseEntityConverterAsyncTest extends BaseEntityTypeOrmT
   BaseEntityTypeOrm,
   BaseEntity
 > {
-  constructor(private readonly convertToBaseEntityTypeOrmMock: jest.Mock<Promise<BaseEntity>>) {
+  public constructor(private readonly convertToBaseEntityTypeOrmMock: jest.Mock<Promise<BaseEntity>>) {
     super();
   }
 

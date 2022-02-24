@@ -7,7 +7,7 @@ import { VirtualQueryToFindQueryTypeOrmConverter } from '../converter/VirtualQue
 
 @Injectable()
 export class DeleteTypeOrmAdapter<TModelDb, TQuery> implements DeleteAdapter<TQuery> {
-  constructor(
+  public constructor(
     private readonly repository: Repository<TModelDb>,
     private readonly queryToQueryTypeOrmConverter: QueryToFindQueryTypeOrmConverter<TModelDb, TQuery>,
   ) {}

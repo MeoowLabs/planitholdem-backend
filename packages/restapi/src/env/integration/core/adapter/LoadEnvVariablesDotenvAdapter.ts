@@ -10,7 +10,7 @@ import { envVariablesToEnvVariablesValidatorEnvalidMap } from '../../envalid/mod
 export class LoadEnvVariablesDotenvAdapter extends LoadDataDotenvAdapter<EnvVariables> {
   private static readonly ENV_VARIABLES_DOTENV_DEFAULT_FILE_NAME: string = '';
 
-  constructor() {
+  public constructor() {
     super(envVariablesToEnvVariablesValidatorEnvalidMap, LoadEnvVariablesDotenvAdapter.getEnvFilepath());
   }
 

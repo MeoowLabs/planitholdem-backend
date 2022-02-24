@@ -10,7 +10,7 @@ class BaseEntityFindQueryToBaseEntityFindQueryTypeOrmConverterAsyncTest extends 
   BaseEntityFindQuery,
   FindConditions<BaseEntityTypeOrm>
 > {
-  constructor(
+  public constructor(
     private readonly convertToEntityFindQueryTypeOrmMock: jest.Mock<Promise<FindConditions<BaseEntityTypeOrm>>>,
   ) {
     super();

@@ -5,7 +5,7 @@ import { ManagerAsync } from './ManagerAsync';
 
 @Injectable()
 export class UpdateManager<TCommand> implements ManagerAsync<TCommand, void> {
-  constructor(private readonly updateAdapter: UpdateAdapter<TCommand>) {}
+  public constructor(private readonly updateAdapter: UpdateAdapter<TCommand>) {}
 
   public async manage(command: TCommand): Promise<void> {
     await this.updateAdapter.update(command);

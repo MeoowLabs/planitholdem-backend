@@ -6,7 +6,7 @@ import { ConverterAsync } from '../../../domain/converter/ConverterAsync';
 
 @Injectable()
 export class InsertTypeOrmAdapter<TModel, TModelDb, TQuery> implements InsertAdapter<TModel, TQuery> {
-  constructor(
+  public constructor(
     private readonly repository: Repository<TModelDb>,
     private readonly modelDbToModelConverter: ConverterAsync<TModelDb, TModel>,
     private readonly queryToTypeOrmQueryConverter: ConverterAsync<TQuery, DeepPartial<TModelDb>>,

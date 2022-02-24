@@ -13,7 +13,7 @@ class BaseEntityInsertCommandToBaseEntityInsertQueryTypeOrmConverterAsyncTest ex
   BaseEntityInsertCommand,
   DeepPartial<BaseEntityTypeOrm>
 > {
-  constructor(
+  public constructor(
     private readonly convertToEntityInsertQueryTypeOrmMock: jest.Mock<Promise<DeepPartial<BaseEntityTypeOrm>>>,
   ) {
     super();
