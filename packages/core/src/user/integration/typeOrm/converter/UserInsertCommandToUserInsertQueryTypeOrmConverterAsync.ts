@@ -3,6 +3,7 @@ import { hash } from 'argon2';
 import { DeepPartial } from 'typeorm';
 
 import { BaseEntityInsertCommandToBaseEntityInsertQueryTypeOrmConverterAsync } from '../../../../common/domain/converter/BaseEntityInsertCommandToBaseEntityInsertQueryTypeOrmConverterAsync';
+import { BaseEntityTypeOrm } from '../../../../common/integration/typeOrm/model/BaseEntityTypeOrm';
 import { UserInsertCommand } from '../../../domain/command/UserInsertCommand';
 import { UserTypeOrm } from '../model/UserTypeOrm';
 
@@ -13,13 +14,16 @@ export class UserInsertCommandToUserInsertQueryTypeOrmConverterAsync extends Bas
 > {
   protected async convertToEntityInsertQueryTypeOrm(
     input: UserInsertCommand,
-    baseEntityFindQueryTypeOrm: DeepPartial<UserTypeOrm>,
+    baseEntityFindQueryTypeOrm: DeepPartial<BaseEntityTypeOrm>,
   ): Promise<DeepPartial<UserTypeOrm>> {
-    baseEntityFindQueryTypeOrm.email = input.email;
-    baseEntityFindQueryTypeOrm.name = input.name;
-    baseEntityFindQueryTypeOrm.passwordHash = await hash(input.password);
-    baseEntityFindQueryTypeOrm.surname = input.surname;
+    const userInsertQueryTypeOrm: DeepPartial<UserTypeOrm> = {
+      ...baseEntityFindQueryTypeOrm,
+      email: input.email,
+      name: input.name,
+      passwordHash: await hash(input.password),
+      surname: input.surname,
+    };
 
-    return baseEntityFindQueryTypeOrm;
+    return userInsertQueryTypeOrm;
   }
 }
