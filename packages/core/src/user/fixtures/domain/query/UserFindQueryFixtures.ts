@@ -3,14 +3,26 @@ import { UserFixtures } from '../model/UserFixtures';
 
 export class UserFindQueryFixtures {
   public static get any(): UserFindQuery {
-    return new UserFindQuery(UserFixtures.any.id, undefined);
+    const fixture: UserFindQuery = {
+      ...UserFixtures.any,
+    };
+
+    return fixture;
   }
 
   public static get withId(): UserFindQuery {
-    return new UserFindQuery(UserFixtures.any.id, undefined);
+    const fixture: UserFindQuery = {
+      id: UserFixtures.any.id,
+    };
+
+    return fixture;
   }
 
   public static get withEmail(): UserFindQuery {
-    return new UserFindQuery(undefined, UserFixtures.any.email);
+    const fixture: UserFindQuery = {
+      email: UserFixtures.any.email,
+    };
+
+    return fixture;
   }
 }

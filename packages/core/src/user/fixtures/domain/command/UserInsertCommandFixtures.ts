@@ -3,11 +3,13 @@ import { UserFixtures } from '../model/UserFixtures';
 
 export class UserInsertCommandFixtures {
   public static get any(): UserInsertCommand {
-    return new UserInsertCommand(
-      UserFixtures.any.name,
-      UserFixtures.any.surname,
-      UserFixtures.any.email,
-      UserFixtures.any.passwordHash,
-    );
+    const fixture: UserInsertCommand = {
+      email: UserFixtures.any.email,
+      name: UserFixtures.any.name,
+      password: UserFixtures.any.passwordHash,
+      surname: UserFixtures.any.surname,
+    };
+
+    return fixture;
   }
 }

@@ -3,10 +3,10 @@ import { BaseEntityFixtures } from '../model/BaseEntityFixtures';
 
 export class BaseEntityFindQueryFixtures {
   public static get any(): BaseEntityFindQuery {
-    return new BaseEntityFindQuery(BaseEntityFixtures.any.id);
+    return {};
   }
 
   public static get withId(): BaseEntityFindQuery {
-    return new BaseEntityFindQuery(BaseEntityFixtures.any.id);
+    return { ...BaseEntityFindQueryFixtures.any, id: BaseEntityFixtures.any.id };
   }
 }

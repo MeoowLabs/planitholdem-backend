@@ -3,12 +3,11 @@ import { DeepPartial } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
 import { BaseEntityTypeOrm } from '../../integration/typeOrm/model/BaseEntityTypeOrm';
-import { BaseEntityInsertCommand } from '../command/BaseEntityInsertCommand';
 import { ConverterAsync } from './ConverterAsync';
 
 @Injectable()
 export abstract class BaseEntityInsertCommandToBaseEntityInsertQueryTypeOrmConverterAsync<
-  TInput extends BaseEntityInsertCommand,
+  TInput,
   TOutput extends DeepPartial<BaseEntityTypeOrm>,
 > implements ConverterAsync<TInput, TOutput>
 {

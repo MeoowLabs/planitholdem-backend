@@ -3,14 +3,12 @@ jest.mock('uuid');
 import { DeepPartial } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
-import { BaseEntityInsertCommandFixtures } from '../../fixtures/domain/command/BaseEntityInsertCommandFixtures';
 import { BaseEntityInsertCommandTypeOrmFixtures } from '../../fixtures/integration/typeOrm/command/BaseEntityInsertCommandTypeOrmFixtures';
 import { BaseEntityTypeOrm } from '../../integration/typeOrm/model/BaseEntityTypeOrm';
-import { BaseEntityInsertCommand } from '../command/BaseEntityInsertCommand';
 import { BaseEntityInsertCommandToBaseEntityInsertQueryTypeOrmConverterAsync } from './BaseEntityInsertCommandToBaseEntityInsertQueryTypeOrmConverterAsync';
 
 class BaseEntityInsertCommandToBaseEntityInsertQueryTypeOrmConverterAsyncTest extends BaseEntityInsertCommandToBaseEntityInsertQueryTypeOrmConverterAsync<
-  BaseEntityInsertCommand,
+  unknown,
   DeepPartial<BaseEntityTypeOrm>
 > {
   public constructor(
@@ -20,7 +18,7 @@ class BaseEntityInsertCommandToBaseEntityInsertQueryTypeOrmConverterAsyncTest ex
   }
 
   protected async convertToEntityInsertQueryTypeOrm(
-    input: BaseEntityInsertCommand,
+    input: unknown,
     baseEntityFindQueryTypeOrm: DeepPartial<BaseEntityTypeOrm>,
   ): Promise<DeepPartial<BaseEntityTypeOrm>> {
     return this.convertToEntityInsertQueryTypeOrmMock(input, baseEntityFindQueryTypeOrm);
@@ -42,10 +40,10 @@ describe(BaseEntityInsertCommandToBaseEntityInsertQueryTypeOrmConverterAsync.nam
   });
 
   describe('.convert()', () => {
-    let baseEntityInsertCommandFixture: BaseEntityInsertCommand;
+    let baseEntityInsertCommandFixture: unknown;
 
     beforeAll(() => {
-      baseEntityInsertCommandFixture = BaseEntityInsertCommandFixtures.any;
+      baseEntityInsertCommandFixture = {};
     });
 
     describe('when called', () => {
@@ -61,7 +59,7 @@ describe(BaseEntityInsertCommandToBaseEntityInsertQueryTypeOrmConverterAsync.nam
 
         convertToEntityInsertQueryTypeOrmMock.mockImplementationOnce(
           async (
-            _input: BaseEntityInsertCommand,
+            _input: unknown,
             baseEntityFindQueryTypeOrm: DeepPartial<BaseEntityTypeOrm>,
           ): Promise<DeepPartial<BaseEntityTypeOrm>> => baseEntityFindQueryTypeOrm,
         );

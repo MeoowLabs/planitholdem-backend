@@ -1,3 +1,1 @@
-import { ICommand } from '@nestjs/cqrs';
-
-export class BaseEntityInsertCommand implements ICommand {}
+export interface BaseEntityInsertCommand {}
