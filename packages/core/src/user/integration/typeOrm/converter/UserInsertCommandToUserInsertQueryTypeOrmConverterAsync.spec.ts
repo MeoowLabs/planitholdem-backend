@@ -27,7 +27,7 @@ describe(UserInsertCommandToUserInsertQueryTypeOrmConverterAsync.name, () => {
 
       beforeAll(async () => {
         userInsertCommandFixture = UserInsertCommandFixtures.any;
-        userInsertQueryTypeOrmFixture = UserInsertQueryTypeOrmFixtures.any;
+        userInsertQueryTypeOrmFixture = UserInsertQueryTypeOrmFixtures.withAllFields;
 
         jest.useFakeTimers();
 

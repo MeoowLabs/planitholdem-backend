@@ -5,7 +5,12 @@ import { UserFixtures } from '../../domain/model/UserFixtures';
 
 export class UserInsertQueryTypeOrmFixtures {
   public static get any(): DeepPartial<UserTypeOrm> {
+    return {};
+  }
+
+  public static get withAllFields(): DeepPartial<UserTypeOrm> {
     return {
+      ...this.any,
       createdAt: UserFixtures.any.createdAt,
       email: UserFixtures.any.email,
       id: UserFixtures.any.id,
