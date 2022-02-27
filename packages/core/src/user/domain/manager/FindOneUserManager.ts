@@ -7,7 +7,7 @@ import { User } from '../model/User';
 import { UserFindQuery } from '../query/UserFindQuery';
 
 @Injectable()
-export class InsertUserManager extends FindOneManager<User, UserFindQuery> {
+export class FindOneUserManager extends FindOneManager<User, UserFindQuery> {
   public constructor(@Inject(FindUserTypeOrmAdapter) findAdapter: FindAdapter<User, UserFindQuery>) {
     super(findAdapter);
   }
