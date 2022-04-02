@@ -2,15 +2,15 @@ import { Injectable } from '@nestjs/common';
 import { FindConditions, QueryBuilder, Repository, SelectQueryBuilder } from 'typeorm';
 
 import { FindAdapter } from '../../../domain/adapter/FindAdapter';
-import { Converter } from '../../../domain/converter/Converter';
-import { QueryToFindQueryTypeOrmConverter } from '../service/QueryToFindQueryTypeOrmConverter';
-import { VirtualQueryToFindQueryTypeOrmConverter } from '../service/VirtualQueryToFindQueryTypeOrmConverter';
+import { ConverterAsync } from '../../../domain/converter/ConverterAsync';
+import { QueryToFindQueryTypeOrmConverter } from '../converter/QueryToFindQueryTypeOrmConverter';
+import { VirtualQueryToFindQueryTypeOrmConverter } from '../converter/VirtualQueryToFindQueryTypeOrmConverter';
 
 @Injectable()
 export class FindTypeOrmAdapter<TModel, TModelDb, TQuery> implements FindAdapter<TModel, TQuery> {
-  constructor(
+  public constructor(
     private readonly repository: Repository<TModelDb>,
-    private readonly modelDbToModelConverter: Converter<TModelDb, TModel>,
+    private readonly modelDbToModelConverter: ConverterAsync<TModelDb, TModel>,
     private readonly findQueryToFindQueryTypeOrmConverter: QueryToFindQueryTypeOrmConverter<TModelDb, TQuery>,
   ) {}
 
@@ -21,7 +21,9 @@ export class FindTypeOrmAdapter<TModel, TModelDb, TQuery> implements FindAdapter
       async (findConditions: FindConditions<TModelDb>): Promise<TModelDb[]> => this.repository.find(findConditions),
     );
 
-    const models: TModel[] = modelsDb.map((modelDb: TModelDb) => this.modelDbToModelConverter.convert(modelDb));
+    const models: TModel[] = await Promise.all(
+      modelsDb.map(async (modelDb: TModelDb) => this.modelDbToModelConverter.convert(modelDb)),
+    );
 
     return models;
   }
@@ -39,7 +41,7 @@ export class FindTypeOrmAdapter<TModel, TModelDb, TQuery> implements FindAdapter
     if (modelDb === undefined) {
       model = undefined;
     } else {
-      model = this.modelDbToModelConverter.convert(modelDb);
+      model = await this.modelDbToModelConverter.convert(modelDb);
     }
 
     return model;
@@ -51,7 +53,7 @@ export class FindTypeOrmAdapter<TModel, TModelDb, TQuery> implements FindAdapter
     findByFindConditions: (findConditions: FindConditions<TModelDb>) => Promise<TOutputDb>,
   ): Promise<TOutputDb> {
     const selectQueryBuilder: SelectQueryBuilder<TModelDb> = this.repository.createQueryBuilder();
-    const findQueryTypeOrmOrQueryBuilder: FindConditions<TModelDb> | QueryBuilder<TModelDb> = (
+    const findQueryTypeOrmOrQueryBuilder: FindConditions<TModelDb> | QueryBuilder<TModelDb> = await (
       this.findQueryToFindQueryTypeOrmConverter as VirtualQueryToFindQueryTypeOrmConverter<TModelDb, TQuery>
     ).convert(query, selectQueryBuilder);
 

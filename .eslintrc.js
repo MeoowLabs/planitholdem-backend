@@ -27,14 +27,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'import'],
   rules: {
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
-    '@typescript-eslint/explicit-member-accessibility': [
-      'error',
-      {
-        overrides: {
-          constructors: 'no-public',
-        },
-      },
-    ],
+    '@typescript-eslint/explicit-member-accessibility': ['error'],
     '@typescript-eslint/member-ordering': ['warn'],
     '@typescript-eslint/naming-convention': [
       'error',

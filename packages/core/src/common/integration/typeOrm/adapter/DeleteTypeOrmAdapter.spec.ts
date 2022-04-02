@@ -1,6 +1,6 @@
 import { FindConditions, QueryBuilder, Repository } from 'typeorm';
 
-import { QueryToFindQueryTypeOrmConverter } from '../service/QueryToFindQueryTypeOrmConverter';
+import { QueryToFindQueryTypeOrmConverter } from '../converter/QueryToFindQueryTypeOrmConverter';
 import { DeleteTypeOrmAdapter } from './DeleteTypeOrmAdapter';
 
 interface ModelTest {
@@ -50,9 +50,9 @@ describe(DeleteTypeOrmAdapter.name, () => {
 
         queryTypeOrmFixture = {};
 
-        (queryToQueryTypeOrmConverterMock.convert as jest.Mock<FindConditions<ModelTest>>).mockReturnValueOnce(
-          queryTypeOrmFixture,
-        );
+        (
+          queryToQueryTypeOrmConverterMock.convert as jest.Mock<Promise<FindConditions<ModelTest>>>
+        ).mockResolvedValueOnce(queryTypeOrmFixture);
 
         await deleteTypeOrmAdapter.delete(queryFixture);
       });
@@ -90,7 +90,7 @@ describe(DeleteTypeOrmAdapter.name, () => {
           fooValue: 'foo-value',
         };
 
-        (queryToQueryTypeOrmConverterMock.convert as jest.Mock<QueryBuilder<ModelTest>>).mockReturnValueOnce(
+        (queryToQueryTypeOrmConverterMock.convert as jest.Mock<Promise<QueryBuilder<ModelTest>>>).mockResolvedValueOnce(
           queryBuilderMock,
         );
 

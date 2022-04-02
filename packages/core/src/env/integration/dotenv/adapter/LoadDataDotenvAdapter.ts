@@ -7,7 +7,7 @@ import { EnvToEnvValidatorEnvalidMap } from '../../envalid/model/EnvToEnvValidat
 
 @Injectable()
 export class LoadDataDotenvAdapter<TData> implements LoadDataAdapter<TData> {
-  constructor(
+  public constructor(
     private readonly envToEnvValidatorEnvalidMap: EnvToEnvValidatorEnvalidMap<TData>,
     private readonly envFilepath: string,
   ) {}

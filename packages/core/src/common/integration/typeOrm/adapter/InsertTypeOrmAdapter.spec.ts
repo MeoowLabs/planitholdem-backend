@@ -1,6 +1,6 @@
 import { DeepPartial, Repository } from 'typeorm';
 
-import { Converter } from '../../../domain/converter/Converter';
+import { ConverterAsync } from '../../../domain/converter/ConverterAsync';
 import { InsertTypeOrmAdapter } from './InsertTypeOrmAdapter';
 
 interface ModelTest {
@@ -13,8 +13,8 @@ interface QueryTest {
 
 describe(InsertTypeOrmAdapter.name, () => {
   let repositoryMock: jest.Mocked<Repository<ModelTest>>;
-  let modelDbToModelConverterMock: jest.Mocked<Converter<ModelTest, ModelTest>>;
-  let queryToTypeOrmQueryConverterMock: jest.Mocked<Converter<QueryTest, DeepPartial<ModelTest>>>;
+  let modelDbToModelConverterMock: jest.Mocked<ConverterAsync<ModelTest, ModelTest>>;
+  let queryToTypeOrmQueryConverterMock: jest.Mocked<ConverterAsync<QueryTest, DeepPartial<ModelTest>>>;
 
   let insertTypeOrmAdapter: InsertTypeOrmAdapter<ModelTest, ModelTest, QueryTest>;
 
@@ -57,8 +57,8 @@ describe(InsertTypeOrmAdapter.name, () => {
         typeOrmQueryFixture = {};
 
         repositoryMock.save.mockResolvedValueOnce(modelFixture);
-        modelDbToModelConverterMock.convert.mockReturnValueOnce(modelFixture);
-        queryToTypeOrmQueryConverterMock.convert.mockReturnValueOnce(typeOrmQueryFixture);
+        modelDbToModelConverterMock.convert.mockResolvedValueOnce(modelFixture);
+        queryToTypeOrmQueryConverterMock.convert.mockResolvedValueOnce(typeOrmQueryFixture);
 
         result = await insertTypeOrmAdapter.insertOne(queryFixture);
       });

@@ -5,7 +5,7 @@ import { ManagerAsync } from './ManagerAsync';
 
 @Injectable()
 export class InsertOneManager<TModel, TQuery> implements ManagerAsync<TQuery, TModel> {
-  constructor(private readonly insertAdapter: InsertAdapter<TModel, TQuery>) {}
+  public constructor(private readonly insertAdapter: InsertAdapter<TModel, TQuery>) {}
 
   public async manage(query: TQuery): Promise<TModel> {
     return this.insertAdapter.insertOne(query);

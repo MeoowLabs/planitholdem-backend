@@ -5,10 +5,10 @@ import { Manager } from '../../domain/service/Manager';
 import { ManagerAsync } from '../../domain/service/ManagerAsync';
 
 @Injectable()
-export class InsertOneCommandHandler<TCommand extends ICommand, TModel> implements ICommandHandler<TCommand, TModel> {
-  constructor(private readonly insertOneManager: Manager<TCommand, TModel> | ManagerAsync<TCommand, TModel>) {}
+export class UpdateCommandHandler<TModel, TCommand extends ICommand> implements ICommandHandler<TCommand> {
+  public constructor(private readonly updateManager: Manager<TCommand, TModel> | ManagerAsync<TCommand, TModel>) {}
 
   public async execute(command: TCommand): Promise<TModel> {
-    return this.insertOneManager.manage(command);
+    return this.updateManager.manage(command);
   }
 }

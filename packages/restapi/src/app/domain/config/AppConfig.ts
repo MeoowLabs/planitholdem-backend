@@ -9,7 +9,7 @@ export class AppConfig {
   public readonly host: string;
   public readonly port: number;
 
-  constructor(@Inject(LoadEnvVariablesDotenvAdapter) loadEnvVariablesAdapter: LoadDataAdapter<EnvVariables>) {
+  public constructor(@Inject(LoadEnvVariablesDotenvAdapter) loadEnvVariablesAdapter: LoadDataAdapter<EnvVariables>) {
     const envVariables: EnvVariables = loadEnvVariablesAdapter.loadData();
 
     this.host = envVariables.HTTP_SERVER_HOST;
